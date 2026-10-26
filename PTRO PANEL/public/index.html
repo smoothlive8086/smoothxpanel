@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMOOTH x HOST &bull; Enterprise Game Server Panel</title>
+  <meta name="description" content="Next-generation high performance game and application server management panel, powered by SMOOTH x HOST and Wings Engine.">
+  
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%2300e5ff'/><stop offset='100%' stop-color='%236366f1'/></linearGradient></defs><rect width='100' height='100' rx='24' fill='%230b0f19'/><path d='M25 65 L50 25 L75 65 L50 50 Z' fill='url(%23g)'/></svg>">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+  <!-- Top Global Navbar -->
+  <header class="navbar">
+    <div style="display: flex; align-items: center; gap: 2.5rem;">
+      <a class="brand-wrapper" id="nav-brand" href="#servers">
+        <div class="brand-logo-glow">
+          <i class="fa-solid fa-bolt-lightning"></i>
+        </div>
+        <div class="brand-text-container">
+          <div class="brand-title">SMOOTH x HOST</div>
+          <div class="brand-badge">Wings Enterprise v2.4</div>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a class="nav-btn active" id="nav-servers" href="#servers">
+          <i class="fa-solid fa-server"></i> Servers
+        </a>
+        <a class="nav-btn" id="nav-admin" href="#admin">
+          <i class="fa-solid fa-shield-halved"></i> Admin Control
+        </a>
+        <a class="nav-btn" id="nav-activity" href="#activity">
+          <i class="fa-solid fa-clock-rotate-left"></i> Audit Logs
+        </a>
+      </nav>
+    </div>
+
+    <div class="navbar-right">
+      <button class="sound-toggle-btn" id="sound-toggle-btn" title="Toggle Audio Sound Effects">
+        <i class="fa-solid fa-volume-high" id="sound-toggle-icon"></i>
+      </button>
+
+      <button class="search-trigger-btn" id="search-palette-btn" title="Quick Search (Ctrl+K)">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <span>Search anything...</span>
+        <span class="search-shortcut-pill">Ctrl+K</span>
+      </button>
+
+      <div class="system-status-pill" title="Cluster daemon heartbeat healthy">
+        <span class="pulse-dot"></span>
+        <span id="ws-status-text">Wings Online</span>
+      </div>
+
+      <div class="user-profile-wrapper" style="position: relative;">
+        <div class="user-profile-btn" id="user-menu-trigger" title="Account Menu">
+          <div class="user-avatar" id="nav-user-avatar">AD</div>
+          <div class="user-name-text" id="nav-user-email">admin@smoothhost.cloud</div>
+          <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem; color: var(--text-dim); margin-left: 2px;"></i>
+        </div>
+
+        <!-- Account Dropdown Menu -->
+        <div class="user-dropdown-menu" id="user-dropdown-menu">
+          <div class="dropdown-header">
+            <div style="font-weight: 700; color: var(--text-main); font-size: 0.92rem;" id="dropdown-user-name">Root Administrator</div>
+            <div style="font-size: 0.78rem; color: var(--text-dim);" id="dropdown-user-email">admin@smoothhost.cloud</div>
+            <div class="badge-role" style="margin-top: 6px;"><i class="fa-solid fa-crown" style="color: #f59e0b;"></i> Root Admin</div>
+          </div>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" id="menu-opt-account" href="#account">
+            <i class="fa-solid fa-user-gear"></i> Account Settings
+          </a>
+          <a class="dropdown-item" id="menu-opt-apikeys" href="#account/api-keys">
+            <i class="fa-solid fa-key"></i> Client API Keys
+          </a>
+          <a class="dropdown-item" id="menu-opt-ssh" href="#account/ssh-keys">
+            <i class="fa-solid fa-terminal"></i> SSH Keys (SFTP)
+          </a>
+          <a class="dropdown-item" id="menu-opt-audit" href="#activity">
+            <i class="fa-solid fa-list-check"></i> Account Activity
+          </a>
+          <div class="dropdown-divider"></div>
+          <div class="dropdown-item" id="menu-opt-sound" style="cursor: pointer;">
+            <i class="fa-solid fa-volume-high"></i> Sound Effects: <span id="menu-sound-state" style="color: var(--brand-cyan); margin-left: 4px;">ON</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Dynamic View Container -->
+  <main class="app-container">
+    <div id="main-content-view">
+      <!-- Dynamically filled by app.js router -->
+      <div style="display:flex; justify-content:center; align-items:center; min-height: 400px; color: var(--text-dim); gap: 12px;">
+        <i class="fa-solid fa-circle-notch fa-spin fa-2x" style="color: var(--brand-cyan);"></i>
+        <span style="font-size: 1.1rem; font-weight: 500;">Connecting to SMOOTH x HOST engine...</span>
+      </div>
+    </div>
+  </main>
+
+  <!-- Toast Notification Center -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- JavaScript Client Modules -->
+  <script src="/js/api.js"></script>
+  <script src="/js/charts.js"></script>
+  <script src="/js/terminal.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>
