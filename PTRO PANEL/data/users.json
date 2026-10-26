@@ -1,0 +1,49 @@
+[
+  {
+    "id": "usr-admin",
+    "username": "admin",
+    "email": "admin@smoothhost.cloud",
+    "firstName": "Root",
+    "lastName": "Administrator",
+    "role": "Root Admin",
+    "rootAdmin": true,
+    "twoFactorEnabled": true,
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "avatar": "AD",
+    "sshKeys": [
+      {
+        "id": "ssh-1",
+        "name": "Dev Workstation (ED25519)",
+        "fingerprint": "SHA256:4YkZ...9aW1",
+        "publicKey": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG5... admin@smoothhost.cloud",
+        "createdAt": "2026-01-10T12:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "usr-mod",
+    "username": "alex_vance",
+    "email": "moderator@smoothhost.net",
+    "firstName": "Alex",
+    "lastName": "Vance",
+    "role": "Staff Member",
+    "rootAdmin": false,
+    "twoFactorEnabled": true,
+    "createdAt": "2026-02-15T08:30:00.000Z",
+    "avatar": "AV",
+    "sshKeys": []
+  },
+  {
+    "id": "usr-client",
+    "username": "steve_gamer",
+    "email": "steve@minecraft.io",
+    "firstName": "Steve",
+    "lastName": "Block",
+    "role": "Client Customer",
+    "rootAdmin": false,
+    "twoFactorEnabled": false,
+    "createdAt": "2026-03-20T14:45:00.000Z",
+    "avatar": "SB",
+    "sshKeys": []
+  }
+]
