@@ -1,0 +1,25 @@
+{
+  "name": "smooth-x-host",
+  "version": "2.4.0",
+  "description": "SMOOTH x HOST - Enterprise Game Server Management Panel",
+  "main": "api/index.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18.x"
+  },
+  "keywords": [
+    "pterodactyl",
+    "game-server-panel",
+    "server-management"
+  ],
+  "author": "SMOOTH x HOST Team",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^4.19.2",
+    "ws": "^8.22.0"
+  }
+}

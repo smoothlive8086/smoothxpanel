@@ -1,0 +1,192 @@
+[
+  {
+    "id": "minecraft-paper",
+    "nest": "Minecraft",
+    "name": "Paper 1.20.4 (High Performance)",
+    "author": "support@smoothhost.cloud",
+    "dockerImage": "ghcr.io/pterodactyl/yolks:java_17",
+    "dockerImages": [
+      "ghcr.io/pterodactyl/yolks:java_21",
+      "ghcr.io/pterodactyl/yolks:java_17",
+      "ghcr.io/pterodactyl/yolks:java_11",
+      "ghcr.io/pterodactyl/yolks:java_8"
+    ],
+    "startup": "java -Xms128M -Xmx{{SERVER_MEMORY}}M -Dterminal.jline=false -Dterminal.ansi=true -jar {{SERVER_JARFILE}} nogui",
+    "icon": "fa-cube",
+    "color": "#10b981",
+    "variables": [
+      {
+        "name": "SERVER_JARFILE",
+        "label": "Server Jar File",
+        "defaultValue": "paper.jar",
+        "description": "The name of the executable jar"
+      },
+      {
+        "name": "MINECRAFT_VERSION",
+        "label": "Minecraft Version",
+        "defaultValue": "1.20.4",
+        "description": "Target game version"
+      },
+      {
+        "name": "BUILD_NUMBER",
+        "label": "Paper Build",
+        "defaultValue": "latest",
+        "description": "Target build number or latest"
+      }
+    ]
+  },
+  {
+    "id": "nodejs-app",
+    "nest": "JavaScript",
+    "name": "Node.js 20 (Discord Bot & APIs)",
+    "author": "support@smoothhost.cloud",
+    "dockerImage": "ghcr.io/pterodactyl/yolks:nodejs_20",
+    "dockerImages": [
+      "ghcr.io/pterodactyl/yolks:nodejs_20",
+      "ghcr.io/pterodactyl/yolks:nodejs_18",
+      "ghcr.io/pterodactyl/yolks:nodejs_16"
+    ],
+    "startup": "npm start",
+    "icon": "fa-brands fa-node-js",
+    "color": "#22c55e",
+    "variables": [
+      {
+        "name": "MAIN_FILE",
+        "label": "Entry Point",
+        "defaultValue": "index.js",
+        "description": "The script file to execute"
+      },
+      {
+        "name": "NODE_ENV",
+        "label": "Node Environment",
+        "defaultValue": "production",
+        "description": "Environment execution mode"
+      }
+    ]
+  },
+  {
+    "id": "rust-dedicated",
+    "nest": "Rust",
+    "name": "Rust Dedicated Server",
+    "author": "support@smoothhost.cloud",
+    "dockerImage": "ghcr.io/pterodactyl/games:rust",
+    "dockerImages": [
+      "ghcr.io/pterodactyl/games:rust"
+    ],
+    "startup": "./RustDedicated -batchmode +server.port {{SERVER_PORT}} +server.identity \"smooth_rust\" +server.seed 1337",
+    "icon": "fa-radiation",
+    "color": "#ef4444",
+    "variables": [
+      {
+        "name": "SERVER_HOSTNAME",
+        "label": "Server Hostname",
+        "defaultValue": "SMOOTH x HOST | 2x Vanilla Rust",
+        "description": "Public server title"
+      },
+      {
+        "name": "MAX_PLAYERS",
+        "label": "Max Players",
+        "defaultValue": "150",
+        "description": "Player slot limit"
+      }
+    ]
+  },
+  {
+    "id": "fivem-server",
+    "nest": "Grand Theft Auto",
+    "name": "FiveM FXServer (Vanilla/QBCore)",
+    "author": "support@smoothhost.cloud",
+    "dockerImage": "ghcr.io/pterodactyl/games:fivem",
+    "dockerImages": [
+      "ghcr.io/pterodactyl/games:fivem"
+    ],
+    "startup": "bash ./run.sh +exec server.cfg",
+    "icon": "fa-car-side",
+    "color": "#f59e0b",
+    "variables": [
+      {
+        "name": "SV_LICENSEKEY",
+        "label": "FiveM License Key",
+        "defaultValue": "cfxk_smoothhost_demo_key",
+        "description": "FiveM Keymaster License"
+      },
+      {
+        "name": "SERVER_HOSTNAME",
+        "label": "Server Name",
+        "defaultValue": "SMOOTH x HOST FiveM Roleplay",
+        "description": "Public server name"
+      }
+    ]
+  },
+  {
+    "id": "python-app",
+    "nest": "Python",
+    "name": "Python 3.11 (AI & Web Workers)",
+    "author": "support@smoothhost.cloud",
+    "dockerImage": "ghcr.io/pterodactyl/yolks:python_3.11",
+    "dockerImages": [
+      "ghcr.io/pterodactyl/yolks:python_3.11",
+      "ghcr.io/pterodactyl/yolks:python_3.10",
+      "ghcr.io/pterodactyl/yolks:python_3.9"
+    ],
+    "startup": "python3 -u {{MAIN_FILE}}",
+    "icon": "fa-brands fa-python",
+    "color": "#3b82f6",
+    "variables": [
+      {
+        "name": "MAIN_FILE",
+        "label": "Script File",
+        "defaultValue": "main.py",
+        "description": "Python script to run"
+      }
+    ]
+  },
+  {
+    "id": "source-csgo",
+    "nest": "Source Engine",
+    "name": "Counter-Strike: Global Offensive",
+    "author": "support@smoothhost.cloud",
+    "dockerImage": "ghcr.io/pterodactyl/games:source",
+    "dockerImages": [
+      "ghcr.io/pterodactyl/games:source"
+    ],
+    "startup": "./srcds_run -game csgo -console -usercon +game_type 0 +game_mode 0 +mapgroup mg_active +map de_dust2 +ip 0.0.0.0 -port {{SERVER_PORT}}",
+    "icon": "fa-crosshairs",
+    "color": "#f97316",
+    "variables": [
+      {
+        "name": "SRCDS_TOKEN",
+        "label": "GSLT Token",
+        "defaultValue": "",
+        "description": "Steam Game Server Login Token"
+      },
+      {
+        "name": "MAP",
+        "label": "Default Map",
+        "defaultValue": "de_dust2",
+        "description": "Initial map to load"
+      }
+    ]
+  },
+  {
+    "id": "voice-teamspeak",
+    "nest": "Voice Servers",
+    "name": "TeamSpeak 3 Server",
+    "author": "support@smoothhost.cloud",
+    "dockerImage": "ghcr.io/pterodactyl/yolks:teamspeak",
+    "dockerImages": [
+      "ghcr.io/pterodactyl/yolks:teamspeak"
+    ],
+    "startup": "./ts3server_minimal_runscript.sh default_voice_port={{SERVER_PORT}}",
+    "icon": "fa-headset",
+    "color": "#06b6d4",
+    "variables": [
+      {
+        "name": "TS_VERSION",
+        "label": "TeamSpeak Version",
+        "defaultValue": "3.13.7",
+        "description": "Target server version"
+      }
+    ]
+  }
+]

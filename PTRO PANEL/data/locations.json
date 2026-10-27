@@ -1,0 +1,34 @@
+[
+  {
+    "id": "loc-local",
+    "short": "local",
+    "long": "Local VPS / Datacenter",
+    "description": "Primary Local Host Infrastructure",
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-10-27T12:00:00.000Z"
+  },
+  {
+    "id": "loc-us-east",
+    "short": "us-east",
+    "long": "North America / Virginia (US East)",
+    "description": "US East Core Edge Datacenter",
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "loc-eu-central",
+    "short": "eu-central",
+    "long": "Europe / Frankfurt (Germany)",
+    "description": "Frankfurt Central European Edge",
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "loc-ap-south",
+    "short": "ap-south",
+    "long": "Asia Pacific / Singapore (AP South)",
+    "description": "Equinix SG1 Turbo Anycast",
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-01-01T00:00:00.000Z"
+  }
+]

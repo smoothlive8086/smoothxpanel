@@ -1,0 +1,102 @@
+[
+  {
+    "id": "alloc-1",
+    "nodeId": "node-us-east",
+    "ip": "198.51.100.24",
+    "port": 25565,
+    "assignedServerId": null,
+    "alias": "us-east-01.smoothhost.cloud:25565",
+    "isPrimary": false,
+    "notes": "US East Game Port"
+  },
+  {
+    "id": "alloc-6",
+    "nodeId": "node-eu-central",
+    "ip": "198.51.100.88",
+    "port": 8080,
+    "assignedServerId": null,
+    "alias": "eu-central-01.smoothhost.cloud:8080",
+    "isPrimary": false,
+    "notes": "EU Central Port"
+  },
+  {
+    "id": "alloc-local-1",
+    "nodeId": "node-local",
+    "ip": "127.0.0.1",
+    "port": 25565,
+    "assignedServerId": "s-9b4f21",
+    "alias": "127.0.0.1:25565",
+    "isPrimary": true,
+    "notes": "Minecraft Game Port"
+  },
+  {
+    "id": "alloc-local-2",
+    "nodeId": "node-local",
+    "ip": "127.0.0.1",
+    "port": 25566,
+    "assignedServerId": "s-9b4f21",
+    "alias": "127.0.0.1:25566",
+    "isPrimary": false,
+    "notes": "Minecraft Dynmap View"
+  },
+  {
+    "id": "alloc-local-3",
+    "nodeId": "node-local",
+    "ip": "127.0.0.1",
+    "port": 25567,
+    "assignedServerId": null,
+    "alias": "127.0.0.1:25567",
+    "isPrimary": false,
+    "notes": ""
+  },
+  {
+    "id": "alloc-local-4",
+    "nodeId": "node-local",
+    "ip": "127.0.0.1",
+    "port": 25568,
+    "assignedServerId": null,
+    "alias": "127.0.0.1:25568",
+    "isPrimary": false,
+    "notes": ""
+  },
+  {
+    "id": "alloc-local-5",
+    "nodeId": "node-local",
+    "ip": "127.0.0.1",
+    "port": 8080,
+    "assignedServerId": "s-6c1a89",
+    "alias": "127.0.0.1:8080",
+    "isPrimary": true,
+    "notes": "Bot Webhook"
+  },
+  {
+    "id": "alloc-local-6",
+    "nodeId": "node-local",
+    "ip": "127.0.0.1",
+    "port": 28015,
+    "assignedServerId": "s-4d8e33",
+    "alias": "127.0.0.1:28015",
+    "isPrimary": true,
+    "notes": "Rust Game Port"
+  },
+  {
+    "id": "alloc-local-7",
+    "nodeId": "node-local",
+    "ip": "127.0.0.1",
+    "port": 3001,
+    "assignedServerId": null,
+    "alias": "127.0.0.1:3001",
+    "isPrimary": false,
+    "notes": ""
+  },
+  {
+    "id": "alloc-local-8",
+    "nodeId": "node-local",
+    "ip": "127.0.0.1",
+    "port": 3002,
+    "assignedServerId": null,
+    "alias": "127.0.0.1:3002",
+    "isPrimary": false,
+    "notes": ""
+  }
+]
