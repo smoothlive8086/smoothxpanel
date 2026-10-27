@@ -1,8 +1,0 @@
-# SMOOTH x HOST Paper Global Optimization Config
-proxies:
-  velocity:
-    enabled: false
-    online-mode: false
-timings:
-  enabled: true
-  verbose: false
