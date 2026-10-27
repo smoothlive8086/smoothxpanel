@@ -1,0 +1,128 @@
+/* ==========================================================================
+   SMOOTH x HOST - Design System & Theme Variables
+   Inspired by Pterodactyl Enterprise & Modern Cybernetic Gaming Aesthetic
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Surface & Backgrounds */
+  --bg-primary: #0a0d14;
+  --bg-secondary: #0f1420;
+  --bg-tertiary: #161d2d;
+  --bg-card: rgba(22, 29, 45, 0.75);
+  --bg-card-hover: rgba(30, 41, 62, 0.85);
+  --bg-input: #0b0f17;
+  --bg-terminal: #070a0f;
+
+  /* Borders & Dividers */
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-glow: rgba(56, 189, 248, 0.25);
+  --border-active: #38bdf8;
+  --border-glass: rgba(255, 255, 255, 0.1);
+
+  /* Primary Brand Neon Accents (SMOOTH x HOST Cyan & Violet) */
+  --brand-cyan: #00e5ff;
+  --brand-cyan-glow: rgba(0, 229, 255, 0.35);
+  --brand-blue: #38bdf8;
+  --brand-indigo: #6366f1;
+  --brand-purple: #a855f7;
+
+  /* Status Colors */
+  --status-running: #10b981;
+  --status-running-glow: rgba(16, 185, 129, 0.3);
+  --status-starting: #f59e0b;
+  --status-starting-glow: rgba(245, 158, 11, 0.3);
+  --status-stopping: #f97316;
+  --status-offline: #ef4444;
+  --status-offline-glow: rgba(239, 68, 68, 0.3);
+
+  /* Typography */
+  --text-main: #f1f5f9;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+  --text-inverse: #020617;
+
+  /* Typography Fonts */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Elevations & Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 12px -1px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.7);
+  --shadow-neon: 0 0 20px rgba(0, 229, 255, 0.25);
+  --shadow-neon-green: 0 0 15px rgba(16, 185, 129, 0.3);
+
+  /* Transitions */
+  --trans-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --trans-smooth: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Background Ambient Glow Mesh */
+body::before {
+  content: '';
+  position: fixed;
+  top: -150px;
+  left: 20%;
+  width: 600px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(0, 229, 255, 0.08) 0%, rgba(99, 102, 241, 0.04) 50%, transparent 80%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  bottom: -150px;
+  right: 15%;
+  width: 500px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.06) 0%, rgba(14, 165, 233, 0.03) 60%, transparent 80%);
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Selection */
+::selection {
+  background: rgba(0, 229, 255, 0.3);
+  color: #fff;
+}
